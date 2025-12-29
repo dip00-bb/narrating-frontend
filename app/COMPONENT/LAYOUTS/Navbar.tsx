@@ -7,24 +7,24 @@ import React from 'react';
 
 const Navbar = () => {
     return (
-        <div className='grid grid-cols-6 border )'>
+        <div className='grid grid-cols-6 border'>
             {/* left */}
             <div className='col-span-1'></div>
 
             {/* middle */}
             <div className='col-span-4 grid grid-cols-6 border-x pl-1.5'>
                 {/* logo */}
-                <div className='col-span-2 border-r py-2 '>
+                <div className='col-span-2 border-r py-2 flex gap-1 items-center'>
                     <ThemeChanger/>
-                    <Link href={'/'} className='cursor-pointer font-bold'>NARRATEIT</Link>
+                    <Link href={'/'} className='cursor-pointer font-bold text-2xl'>NARRATEIT</Link>
                 </div>
 
                 {/* nav items */}
-                <div className='col-span-4 flex justify-between px-1.5 py-2'>
-                    <h1 className='cursor-pointer font-bold'>HOME</h1>
-                    <h1 className='cursor-pointer font-bold'>BLOGS</h1>
-                    <h1 className='cursor-pointer font-bold'>LOGIN</h1>
-                    <h1 className='cursor-pointer font-bold'>REGISTER</h1>
+                <div className='col-span-4 flex justify-between items-center px-1.5'>
+                    <h1 className='cursor-pointer font-bold text-xl'>HOME</h1>
+                    <h1 className='cursor-pointer font-bold text-xl'>BLOGS</h1>
+                    <h1 className='cursor-pointer font-bold text-xl'>LOGIN</h1>
+                    <h1 className='cursor-pointer font-bold text-xl'>REGISTER</h1>
                 </div>
             </div>
 

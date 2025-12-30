@@ -7,8 +7,8 @@
   /* Your default theme */
   --radius: 0.625rem;
   --background: #ffff;
-  --secondary-color:#456882 ;
-  --accent-color:#080808;
+  --secondary-color: #456882;
+  --accent-color: #080808;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -43,8 +43,8 @@
 
 [data-theme='dark'] {
   --background: #09111a;
-  --secondary-color:#456882 ;
-  --accent-color:#F4F4F4;
+  --secondary-color: #456882;
+  --accent-color: #F4F4F4;
 }
 
 @theme inline {
@@ -91,7 +91,7 @@
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
-   --accent-color:#456882;
+  --accent-color: #456882;
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
@@ -121,6 +121,16 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+.primary-fontsize {
+  font-size: clamp(2.25rem, 1.903rem + 1.4925vw, 3.75rem);
+}
+.secondery-fontsize{
+  font-size: clamp(1.25rem, 1.1054rem + 0.6219vw, 1.875rem);
+}
+.accent-fontsize{
+  font-size: clamp(0.875rem, 0.7882rem + 0.3731vw, 1.25rem);
 }
 
 /* @layer base {

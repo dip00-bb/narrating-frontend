@@ -1,13 +1,11 @@
 
-import { Smooch_Sans } from 'next/font/google';
+
+import { smoochSans } from '@/app/FONTS/fonts';
 import React from 'react';
 import { FaSquareFacebook, FaSquareInstagram, FaSquareXTwitter } from 'react-icons/fa6';
 
 
-const smoochSans=Smooch_Sans({
-    weight:'500',
-    subsets:['latin']
-})
+
 const BannerFooter = () => {
 
     return (

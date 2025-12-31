@@ -1,15 +1,9 @@
 
-import { BBH_Bartle, Smooch_Sans } from 'next/font/google';
-import BTN from '../btn/ButtonBtn';
+import BTN from '../BTN/ButtonBtn';
 import { ArrowBigRight } from 'lucide-react';
-const bbgBartle = BBH_Bartle({
-    weight: '400',
-    subsets: ['latin']
-})
-const smoochSans=Smooch_Sans({
-    weight:'500',
-    subsets:['latin']
-})
+import { bbgBartle, smoochSans } from '@/app/FONTS/fonts';
+
+
 const BannerHeader = () => {
     return (
         <div className='space-y-4 md:space-y-10'>

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { smoochSans } from '@/app/FONTS/fonts';
 
 
 interface IBTN{
@@ -10,7 +11,7 @@ interface IBTN{
 
 const BTN = (props:IBTN) => {
     return (
-        <Button className={`bg-transparent border border-(--secondary-color) text-(--accent-color) hover:text-(--accent-color) cursor-pointer ${props.classes}`}>{props.children}</Button>
+        <Button className={`${smoochSans.className} bg-transparent border border-(--secondary-color) text-(--accent-color) hover:text-(--accent-color) cursor-pointer ${props.classes}`}>{props.children}</Button>
     );
 };
 

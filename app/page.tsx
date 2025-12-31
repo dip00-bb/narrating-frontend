@@ -30,7 +30,7 @@ const Home = () => {
 
           {/* Top Blogs */}
           <div>
-
+              
           </div>
 
 

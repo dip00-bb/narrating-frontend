@@ -7,7 +7,7 @@ const PopularBlogCard = () => {
     return (
         <div className='flex items-center justify-between border-b-2 border-(--secondary-color) pb-3'>
             <div>
-                <p className={`text-xl md:text-2xl ${smoochSans.className}`}>Time slowly fades where moss grows</p>
+                <p className={`text-sm md:text-2xl ${smoochSans.className}`}>Time slowly fades where moss grows</p>
 
                 <div className='flex items-center gap-0.5'>
                     <Calendar size={15} />

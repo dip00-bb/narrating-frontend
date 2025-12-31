@@ -5,6 +5,7 @@ import BannerFooter from './COMPONENT/BANNER/BannerFooter';
 import BlogCard from './COMPONENT/CARD/BlogCard';
 import PopularBlogCard from './COMPONENT/CARD/PopularBlogCard';
 import { smoochSans } from './FONTS/fonts';
+import PopularAuthorCard from './COMPONENT/CARD/PopularAuthorCard';
 
 
 const Home = () => {
@@ -52,22 +53,43 @@ const Home = () => {
               </div>
             </div>
 
-            {/* popular blog */}
-            <div>
-              <div className='mb-4'>
-                <p className={`mb-3.5 secondery-fontsize font-bold ${smoochSans.className}`}>POPULAR BLOGS</p>
-                <hr className='border-dotted' />
-                <hr className='border-dotted' />
-                <hr className='border-dotted' />
-                <hr className='border-dotted' />
-                <hr className='border-dotted' />
+            {/* popular blog and author */}
+            <div className='justify-between grid grid-cols-2 gap-3.5 lg:block'>
+              <div>
+                <div className='mb-4'>
+                  <p className={`mb-3.5 secondery-fontsize font-bold ${smoochSans.className}`}>POPULAR BLOGS</p>
+                  <hr className='border-dotted' />
+                  <hr className='border-dotted' />
+                  <hr className='border-dotted' />
+                  <hr className='border-dotted' />
+                  <hr className='border-dotted' />
+                </div>
+                <div className='space-y-3.5'>
+                  <PopularBlogCard />
+                  <PopularBlogCard />
+                  <PopularBlogCard />
+                  <PopularBlogCard />
+                </div>
               </div>
-              <div className='space-y-3.5'>
-                <PopularBlogCard />
-                <PopularBlogCard />
-                <PopularBlogCard />
-                <PopularBlogCard />
+
+              <div>
+                <div className='mb-4'>
+                  <p className={`mb-3.5 secondery-fontsize font-bold ${smoochSans.className}`}>POPULAR AUTHOR</p>
+                  <hr className='border-dotted' />
+                  <hr className='border-dotted' />
+                  <hr className='border-dotted' />
+                  <hr className='border-dotted' />
+                  <hr className='border-dotted' />
+                </div>
+
+                <div className='space-y-3.5'>
+                  <PopularAuthorCard/>
+                  <PopularAuthorCard/>
+                  <PopularAuthorCard/>
+                  <PopularAuthorCard/>
+                </div>
               </div>
+
             </div>
           </div>
 

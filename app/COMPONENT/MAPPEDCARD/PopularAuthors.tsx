@@ -1,16 +1,11 @@
 import React from 'react';
-import DottedBorder from '../COMMONBORDER/DottedBorder';
 import PopularAuthorCard from '../CARD/PopularAuthorCard';
-import { smoochSans } from '@/app/FONTS/fonts';
+import BorderdSectionTitle from '../SECTIONCOMPONENT/BorderdSectionTitle';
 
 const PopularAuthors = () => {
     return (
         <div>
-            <div className='mb-4'>
-                <p className={`mb-3.5 secondery-fontsize font-bold ${smoochSans.className}`}>POPULAR AUTHOR</p>
-                <DottedBorder />
-            </div>
-
+            <BorderdSectionTitle>Popular Author</BorderdSectionTitle>
             <div className='space-y-3.5'>
                 <PopularAuthorCard />
                 <PopularAuthorCard />

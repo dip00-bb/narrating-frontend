@@ -2,16 +2,13 @@ import React from 'react';
 import Navbar from './COMPONENT/LAYOUTS/Navbar';
 import BannerHeader from './COMPONENT/BANNER/BannerHeader';
 import BannerFooter from './COMPONENT/BANNER/BannerFooter';
-import BlogCard from './COMPONENT/CARD/BlogCard';
 import { smoochSans } from './FONTS/fonts';
-import PopularAuthorCard from './COMPONENT/CARD/PopularAuthorCard';
 import DottedBorder from './COMPONENT/COMMONBORDER/DottedBorder';
-import { Button } from '@/components/ui/button';
-import Image from 'next/image';
-import RecentBlogs from './COMPONENT/MAPPEDCARD/PopularBlogs';
 import PopularAuthors from './COMPONENT/MAPPEDCARD/PopularAuthors';
 import SocialMediaGrid from './COMPONENT/SOCIALMEDIA/SocialMediaGrid';
 import RelatedBlogCarousel from './COMPONENT/MAPPEDCARD/RelatedBlogCarousel';
+import RecentBlogCards from './COMPONENT/MAPPEDCARD/RecentBlogCards';
+import PopularBlogs from './COMPONENT/MAPPEDCARD/PopularBlogs';
 
 
 const Home = () => {
@@ -42,24 +39,13 @@ const Home = () => {
           <div className='grid grid-cols-1 md:grid-cols-3 md:gap-10'>
             {/* blog card */}
             <div className='col-span-2'>
-              <div className='mb-4'>
-                <p className={`mb-3.5 secondery-fontsize font-bold ${smoochSans.className}`}>RECENT BLOG</p>
-                <DottedBorder />
-              </div>
-              <div className='space-y-3.5'>
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-              </div>
+              <RecentBlogCards />
             </div>
 
             {/* popular blog and author */}
             <div className='justify-between grid grid-cols-2 gap-3.5 lg:block md:space-y-10'>
               <div>
-                <RecentBlogs />
+                <PopularBlogs/>
               </div>
 
               <div>
@@ -91,6 +77,8 @@ const Home = () => {
         {/* right side */}
         <div className='hidden md:col-span-1 md:block'></div>
       </div>
+
+      
     </div>
   );
 };

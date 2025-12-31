@@ -3,9 +3,15 @@ import Navbar from './COMPONENT/LAYOUTS/Navbar';
 import BannerHeader from './COMPONENT/BANNER/BannerHeader';
 import BannerFooter from './COMPONENT/BANNER/BannerFooter';
 import BlogCard from './COMPONENT/CARD/BlogCard';
-import PopularBlogCard from './COMPONENT/CARD/PopularBlogCard';
 import { smoochSans } from './FONTS/fonts';
 import PopularAuthorCard from './COMPONENT/CARD/PopularAuthorCard';
+import DottedBorder from './COMPONENT/COMMONBORDER/DottedBorder';
+import { Button } from '@/components/ui/button';
+import Image from 'next/image';
+import RecentBlogs from './COMPONENT/MAPPEDCARD/PopularBlogs';
+import PopularAuthors from './COMPONENT/MAPPEDCARD/PopularAuthors';
+import SocialMediaGrid from './COMPONENT/SOCIALMEDIA/SocialMediaGrid';
+import RelatedBlogCarousel from './COMPONENT/MAPPEDCARD/RelatedBlogCarousel';
 
 
 const Home = () => {
@@ -32,19 +38,16 @@ const Home = () => {
           </div>
 
 
-          {/* Top Blogs */}
+          {/*Recent and Top Blogs and top author  */}
           <div className='grid grid-cols-1 md:grid-cols-3 md:gap-10'>
-            {/* card */}
+            {/* blog card */}
             <div className='col-span-2'>
               <div className='mb-4'>
                 <p className={`mb-3.5 secondery-fontsize font-bold ${smoochSans.className}`}>RECENT BLOG</p>
-                <hr className='border-dotted' />
-                <hr className='border-dotted' />
-                <hr className='border-dotted' />
-                <hr className='border-dotted' />
-                <hr className='border-dotted' />
+                <DottedBorder />
               </div>
               <div className='space-y-3.5'>
+                <BlogCard />
                 <BlogCard />
                 <BlogCard />
                 <BlogCard />
@@ -54,44 +57,33 @@ const Home = () => {
             </div>
 
             {/* popular blog and author */}
-            <div className='justify-between grid grid-cols-2 gap-3.5 lg:block'>
+            <div className='justify-between grid grid-cols-2 gap-3.5 lg:block md:space-y-10'>
               <div>
-                <div className='mb-4'>
-                  <p className={`mb-3.5 secondery-fontsize font-bold ${smoochSans.className}`}>POPULAR BLOGS</p>
-                  <hr className='border-dotted' />
-                  <hr className='border-dotted' />
-                  <hr className='border-dotted' />
-                  <hr className='border-dotted' />
-                  <hr className='border-dotted' />
-                </div>
-                <div className='space-y-3.5'>
-                  <PopularBlogCard />
-                  <PopularBlogCard />
-                  <PopularBlogCard />
-                  <PopularBlogCard />
-                </div>
+                <RecentBlogs />
+              </div>
+
+              <div>
+                <PopularAuthors />
+              </div>
+
+              <div>
+                <SocialMediaGrid />
               </div>
 
               <div>
                 <div className='mb-4'>
-                  <p className={`mb-3.5 secondery-fontsize font-bold ${smoochSans.className}`}>POPULAR AUTHOR</p>
-                  <hr className='border-dotted' />
-                  <hr className='border-dotted' />
-                  <hr className='border-dotted' />
-                  <hr className='border-dotted' />
-                  <hr className='border-dotted' />
+                  <p className={`mb-3.5 secondery-fontsize font-bold ${smoochSans.className}`}>Related </p>
+                  <DottedBorder />
                 </div>
-
-                <div className='space-y-3.5'>
-                  <PopularAuthorCard/>
-                  <PopularAuthorCard/>
-                  <PopularAuthorCard/>
-                  <PopularAuthorCard/>
-                </div>
+                <RelatedBlogCarousel />
               </div>
-
             </div>
+
+
+
           </div>
+
+
 
 
         </div>

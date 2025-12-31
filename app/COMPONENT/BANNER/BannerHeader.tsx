@@ -7,7 +7,7 @@ import { bbgBartle, smoochSans } from '@/app/FONTS/fonts';
 const BannerHeader = () => {
     return (
         <div className='space-y-4 md:space-y-10'>
-            <div className='w-full md:w-4xl'>
+            <div className='w-full'>
                 <h1 className={` primary-fontsize ${bbgBartle.className} text-(--accent-color)`}>LEARN , <br />TEACH <br /> AND EXPLORE</h1>
             </div>
 

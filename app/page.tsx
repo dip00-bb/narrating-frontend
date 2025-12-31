@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './COMPONENT/LAYOUTS/Navbar';
 import BannerHeader from './COMPONENT/BANNER/BannerHeader';
 import BannerFooter from './COMPONENT/BANNER/BannerFooter';
+import BlogCard from './COMPONENT/CARD/BlogCard';
 
 
 const Home = () => {
@@ -29,8 +30,20 @@ const Home = () => {
 
 
           {/* Top Blogs */}
-          <div>
-              
+          <div className='grid grid-cols-3 '>
+            {/* card */}
+            <div className='col-span-2 space-y-3.5'>
+              <BlogCard />
+              <BlogCard />
+              <BlogCard />
+              <BlogCard />
+              <BlogCard />
+            </div>
+
+            {/* popular blog */}
+            <div>
+          
+            </div>
           </div>
 
 

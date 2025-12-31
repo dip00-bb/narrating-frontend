@@ -1,25 +1,28 @@
-import { Button } from '@/components/ui/button';
+
+import { BBH_Bartle, Smooch_Sans } from 'next/font/google';
+import BTN from '../btn/ButtonBtn';
 import { ArrowBigRight } from 'lucide-react';
-import { BBH_Bartle } from 'next/font/google';
-import React from 'react';
 const bbgBartle = BBH_Bartle({
     weight: '400',
     subsets: ['latin']
 })
-
+const smoochSans=Smooch_Sans({
+    weight:'500',
+    subsets:['latin']
+})
 const BannerHeader = () => {
     return (
-        <div className='space-y-5 md:space-y-10'>
-            <div>
-                <h1 className={` primary-fontsize ${bbgBartle.className} text-(--accent-color)`}>LEARN , TEACH AND EXPLORE</h1>
+        <div className='space-y-4 md:space-y-10'>
+            <div className='w-full md:w-4xl'>
+                <h1 className={` primary-fontsize ${bbgBartle.className} text-(--accent-color)`}>LEARN , <br />TEACH <br /> AND EXPLORE</h1>
             </div>
 
-            <div>
-                <p className='secondery-fontsize'>Share Ideas, Discover More, Explore the World.
+            <div className='w-full md:w-4xl'>
+                <p className={`secondery-fontsize ${smoochSans.className}`}>Share Ideas, Discover More, Explore the World.
                     Join a community where curiosity leads the way, and every post sparks new possibilities. Your next adventure starts here.</p>
             </div>
             <div>
-                <Button className='bg-transparent border border-(--secondary-color) cursor-pointer'>EXPLORE MORE <ArrowBigRight /></Button>
+                <BTN classes='py-6'>Explore More <ArrowBigRight/></BTN>
             </div>
         </div>
     );

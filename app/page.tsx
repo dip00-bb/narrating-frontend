@@ -9,11 +9,16 @@ const Home = () => {
     <div>
       <header><Navbar /></header>
 
-      {/* banner */}
-      <div className='grid grid-cols-6'>
-        <div className='col-span-1 '></div>
-        <div className='col-span-4 border-x-2 border-b-2 border-(--secondary-color) p-4'>
-          <div className='space-y-4 flex md:h-[70vh] flex-col md:justify-around'>
+      {/* grid layout */}
+      <div className=' grid grid-cols-1 md:grid-cols-6 px-0.5'>
+        {/* left side */}
+        <div className='hidden md:col-span-1 md:block'></div>
+
+        {/* 4 col main layout */}
+        <div className='col-span-4 md:border-x-2 md:border-b-2 border-(--secondary-color) p-3'>
+
+          {/* banner */}
+          <div className='space-y-2 md:space-y-4 flex  flex-col md:justify-around'>
             <div>
               <BannerHeader />
             </div>
@@ -21,8 +26,18 @@ const Home = () => {
               <div className='w-full md:w-120 md:ml-auto'><BannerFooter /></div>
             </div>
           </div>
+
+
+          {/* Top Blogs */}
+          <div>
+
+          </div>
+
+
         </div>
-        <div className='col-span-1'></div>
+
+        {/* right side */}
+        <div className='hidden md:col-span-1 md:block'></div>
       </div>
     </div>
   );

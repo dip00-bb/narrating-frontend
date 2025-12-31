@@ -1,27 +1,28 @@
 
-import { Roboto } from 'next/font/google';
+import { Smooch_Sans } from 'next/font/google';
 import React from 'react';
 import { FaSquareFacebook, FaSquareInstagram, FaSquareXTwitter } from 'react-icons/fa6';
 
-const roboto=Roboto({
+
+const smoochSans=Smooch_Sans({
+    weight:'500',
     subsets:['latin']
 })
-
 const BannerFooter = () => {
 
     return (
         <div>
             <div>
                 <div>
-                    <p className='text-2xl border-b w-fit pb-2'>Message</p>
+                    <p className={`text-2xl border-b w-fit mb-4 ${smoochSans.className}`}>Message</p>
                 </div>
-                <p className={`accent-fontsize ${roboto.className}`}>
+                <p className={`accent-fontsize ${smoochSans.className} `}>
                     We&apos;re thrilled to have you here. This is a space where creativity flows, ideas thrive, and the world is yours to explore. Whether you&apos;re here to share your thoughts, find inspiration, or dive into new perspectives, you&apos;ve found the right place. Join us as we discover, learn, and grow together!
                 </p>
-                <div className='flex gap-2.5 mt-2.5'>
-                    <FaSquareXTwitter size={35} className='text-(--secondary-color) cursor-pointer'/>
-                    <FaSquareFacebook size={35} className='text-(--secondary-color) cursor-pointer'/>
-                    <FaSquareInstagram size={35} className='text-(--secondary-color) cursor-pointer'/>
+                <div className='flex gap-2.5 mb-2.5'>
+                    <FaSquareXTwitter size={30} className='text-(--secondary-color) cursor-pointer' />
+                    <FaSquareFacebook size={30} className='text-(--secondary-color) cursor-pointer' />
+                    <FaSquareInstagram size={30} className='text-(--secondary-color) cursor-pointer' />
                 </div>
             </div>
         </div>

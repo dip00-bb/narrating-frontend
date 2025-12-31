@@ -8,12 +8,20 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import Image from 'next/image';
+import DottedBorder from '../COMMONBORDER/DottedBorder';
+import { smoochSans } from '@/app/FONTS/fonts';
 
 
 
 const RelatedBlogCarousel = () => {
     return (
         <div>
+
+            <div className='mb-4'>
+                <p className={`mb-3.5 secondery-fontsize font-bold ${smoochSans.className}`}>RECENT BLOG</p>
+                <DottedBorder />
+            </div>
+
             <Carousel className="w-full max-w-sm">
                 <CarouselContent>
                     {Array.from({ length: 5 }).map((_, index) => (

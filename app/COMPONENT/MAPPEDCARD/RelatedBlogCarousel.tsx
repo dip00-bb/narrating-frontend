@@ -29,7 +29,7 @@ const RelatedBlogCarousel = () => {
                             <div className="">
                                 <Card className='h-fit'>
                                     <CardContent className="">
-                                        <div className="w-full relative">
+                                        <div className="relative">
                                             <Image
                                                 src="/heroforeground.jpg"
                                                 alt="profile"

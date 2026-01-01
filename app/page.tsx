@@ -4,6 +4,7 @@ import RecentBlogCards from './COMPONENT/MAPPEDCARD/RecentBlogCards';
 import Banner from './COMPONENT/BANNER/Banner';
 import PopularItemsAndSocial from './COMPONENT/LAYOUTS/PopularItemsAndSocial';
 import Footer from './COMPONENT/LAYOUTS/Footer';
+import BrowseByCategory from './COMPONENT/FILTER/BrowseByCategory';
 
 
 const Home = () => {
@@ -27,16 +28,22 @@ const Home = () => {
               <RecentBlogCards />
             </div>
             <div className='justify-between grid grid-cols-2 gap-3.5 lg:block md:space-y-10'>
-              <PopularItemsAndSocial/>
+              <PopularItemsAndSocial />
             </div>
           </div>
+
+          <div><BrowseByCategory /></div>
         </div>
+
+
+
+
 
         {/* right side */}
         <div className='hidden md:col-span-1 md:block'></div>
       </div>
 
-      <footer><Footer/></footer>
+      <footer><Footer /></footer>
     </div>
   );
 };

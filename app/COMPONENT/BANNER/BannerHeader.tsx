@@ -1,7 +1,8 @@
 
-import BTN from '../BTN/ButtonBtn';
+
 import { ArrowBigRight } from 'lucide-react';
 import { bbgBartle, smoochSans } from '@/app/FONTS/fonts';
+import BTN from '../BTN/ButtonBtn';
 
 
 const BannerHeader = () => {

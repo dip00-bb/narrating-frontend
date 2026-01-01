@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "./THEME/theme-provider";
+import Navbar from "./COMPONENT/LAYOUTS/Navbar";
 
 
 
@@ -21,6 +22,7 @@ export default function RootLayout({
         className={`antialiased`}
       >
         <ThemeProvider>
+          <Navbar/>
           {children}
         </ThemeProvider>
       </body>

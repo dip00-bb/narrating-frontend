@@ -1,6 +1,6 @@
 import React from 'react';
 import DottedBorder from '../COMMONBORDER/DottedBorder';
-import BlogCard from '../CARD/BlogCard';
+import BlogCard from '../BLOG/BlogCard';
 import { smoochSans } from '@/app/FONTS/fonts';
 
 const RecentBlogCards = () => {

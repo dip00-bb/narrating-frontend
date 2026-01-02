@@ -4,7 +4,7 @@ import React from 'react';
 const TextSide = () => {
     return (
         <div className='flex flex-col items-center'>
-            <p className={`${bbgBartle.className} lg:text-2xl flex gap-1.5 text-center mb-2`}>
+            <p className={`${bbgBartle.className} lg :text-2xl flex gap-1.5 text-center mb-2`}>
                 <span>TEACH</span>
                 <span>.</span>
                 <span>LEARN</span>

@@ -1,10 +1,8 @@
 import { smoochSans } from "@/app/FONTS/fonts";
 import DottedBorder from "../COMMONBORDER/DottedBorder";
 import React from "react";
+import { IChildren } from "@/app/INTERFACES/ICHILDREN";
 
-interface IChildren{
-    children:React.ReactNode
-}
 
 const BorderdSectionTitle = ({children}:IChildren) => {
     return (

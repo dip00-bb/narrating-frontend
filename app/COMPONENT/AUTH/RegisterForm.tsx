@@ -1,8 +1,11 @@
 "use client"
 
-import { bbgBartle, smoochSans } from '@/app/FONTS/fonts';
+import { smoochSans } from '@/app/FONTS/fonts';
 import { Eye, EyeClosed, Lock, Mail, MoveUpRight, User } from 'lucide-react';
 import React, { useState } from 'react';
+import AuthHeading from './AuthHeading';
+import InputFields from './InputFields';
+import PasswordField from './PasswordField';
 
 interface IUSERINTERFACE {
     userName: string,
@@ -38,56 +41,18 @@ const RegisterForm = () => {
     return (
         <form onSubmit={handleSubmit}>
             <div className='border-b px-4 py-4 md:py-8'>
-                <h1 className={`${bbgBartle.className} text-sm md:text-xl`}>CREATE NEW ACCOUNT</h1>
+                <AuthHeading>Create New Account</AuthHeading>
             </div>
 
             <div className={`${smoochSans.className} space-y-4 px-2 p-2`}>
-                {/* user name */}
-                <div className='flex items-center justify-between'>
-                    <div>
-                        <p className={`text-xl md:text-2xl`}>USERNAME:</p>
-                    </div>
 
-                    <div className='border flex items-center gap-2 w-36 md:w-2xs'>
-                        <div className='border-r px-2.5 py-3 '><User /></div>
-                        <div><input onChange={handleUserInfo} name='userName' type="text" placeholder='ENTER YOUR NAME' className='border-0 outline-0 py-3 w-full' /></div>
-                    </div>
-                </div>
+                <InputFields placeholder='ENTER YOUR NAME' name='userName' seterFunction={handleUserInfo} Icon={<User />} type='text'>Username</InputFields>
 
 
-                {/* Email  */}
-
-                <div className='flex items-center justify-between'>
-                    <div>
-                        <p className={`text-xl md:text-2xl`}>Email:</p>
-                    </div>
-
-                    <div className='border flex items-center gap-2 w-36 md:w-2xs'>
-                        <div className='border-r px-2.5 py-3'><Mail /></div>
-                        <div>
-                            <input onChange={handleUserInfo} name="email" type="email" placeholder='ENTER YOUR EMAIL' className='border-0 outline-0 py-3 w-full' />
-                        </div>
-                    </div>
-                </div>
-
-                {/* Password */}
-
-                <div className='flex items-center justify-between '>
-                    <div>
-                        <p className={`text-xl md:text-2xl`}>Password:</p>
-                    </div>
-
-                    <div className='border flex items-center gap-2 w-36 md:w-2xs'>
-                        <div className='border-r px-2.5 py-3 '><Lock /></div>
-                        <div className='flex items-center  w-full'>
-                            <input onChange={handleUserInfo} name='password' type={isPassword ? "password" : "text"} placeholder='ENTER YOUR PASSWORD' className='border-0 outline-0 py-3 w-full' />
-                            <div onClick={() => (setIsPassword(!isPassword))} className='w-fit h-fit place-items-end  mr-2'>{isPassword ? <Eye /> : <EyeClosed />}</div>
-                        </div>
-
-                    </div>
+                <InputFields placeholder='ENTER YOUR EMAIL' name='email' seterFunction={handleUserInfo} Icon={<Mail />} type='email'>Email</InputFields>
 
 
-                </div>
+                <PasswordField typeState={isPassword} typeToogler={setIsPassword} Icon={<Lock />} EyeOpenIcon={<Eye />} EyeCloseIcon={<EyeClosed />} seterFunction={handleUserInfo}>Password</PasswordField>
 
                 <div className='flex justify-between items-center'>
                     <div>

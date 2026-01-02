@@ -3,11 +3,12 @@ import BlogCard from './BlogCard';
 import { smoochSans } from '@/app/FONTS/fonts';
 import SelectFilter from './SelectFilter';
 
+
 const AllBlogs = () => {
     return (
-        <div className='grid grid-cols-6'>
+        <div className='grid grid-cols-1 md:grid-cols-6 px-2'>
             <div className='col-span-1'></div>
-            <div className='col-span-4 grid grid-cols-6 '>
+            <div className='col-span-4 grid grid-cols-1 md:grid-cols-6 '>
                 <div className='col-span-4 space-y-6'>
                     <BlogCard />
                     <BlogCard />
@@ -23,8 +24,8 @@ const AllBlogs = () => {
                     <BlogCard />
                 </div>
 
-                <div className='col-span-2'>
-                    <div className='px-4 space-y-10'>
+                <div className='col-span-2 hidden md:block'>
+                    <div className='px-4 space-y-10 sticky top-0'>
                         <div className='space-y-2.5'>
                             <p className={`${smoochSans.className} text-xl md:text-2xl`}> Search By Author or Title</p>
                             <div className='border flex items-center gap-2 '>
@@ -45,9 +46,9 @@ const AllBlogs = () => {
                         </div>
 
 
-                        <div>
+                        <div className='space-y-2'>
                             <p className={`${smoochSans.className} text-xl md:text-2xl`}>FILTER BY</p>
-                            <SelectFilter/>
+                            <div><SelectFilter/></div>
                         </div>
                     </div>
                 </div>

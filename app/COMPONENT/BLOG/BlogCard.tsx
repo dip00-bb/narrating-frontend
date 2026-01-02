@@ -7,7 +7,7 @@ import BTN from '../BTN/ButtonBtn';
 
 const BlogCard = () => {
     return (
-        <div className='border border-(--secondary-color)/70 flex h-60'>
+        <div className='border border-(--secondary-color)/70 grid grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 h-80'>
 
             <div className="w-full relative">
                 <Image
@@ -15,15 +15,15 @@ const BlogCard = () => {
                     alt="profile"
                     objectFit="cover"
                     fill
-                    className="h-full  top-0 left-0 object-cover"
+                    className="h-full top-0 left-0 object-cover"
                 />
             </div>
 
 
-            <div className='p-3 flex flex-col justify-between'>
+            <div className='p-3 flex flex-col  gap-3 h-fit md:h-full sm:justify-between'>
 
                 <div className='flex justify-between '>
-                    <div className='bg-transparent border border-(--secondary-color) text-(--accent-color) w-fit px-2 flex items-center rounded gap-0.5'>
+                    <div className='bg-transparent border border-(--secondary-color) text-(--accent-color) w-fit px-2 flex items-center gap-0.5'>
                         <span className='font-bold text-2xl mb-1.5'>&#x2022;</span>
                         <span className={`${smoochSans.className} font-semibold`}>Fashion</span>
                     </div>
@@ -52,7 +52,7 @@ const BlogCard = () => {
                 <div className='flex justify-between'>
                     <div>
                         <Avatar>
-                            <AvatarImage src={'/heroforeground.jpg'}/>
+                            <AvatarImage src={'/heroforeground.jpg'} />
                         </Avatar>
                     </div>
 

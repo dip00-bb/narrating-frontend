@@ -9,7 +9,7 @@ const AllBlogs = () => {
 
 
     const [panelOpen, setPanelOpen] = useState(false)
-    const handleSearch=(e:React.FormEvent<HTMLFormElement>)=>{
+    const handleSearch=(e:React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault()
         console.log("Hello")
     }

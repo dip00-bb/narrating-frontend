@@ -1,15 +1,18 @@
+import { smoochSans } from '@/app/FONTS/fonts';
 import React from 'react';
 
 interface Iblofbtn{
     Icon:React.ReactElement,
-    children:React.ReactNode
+    children:React.ReactNode,
+    hidden?:string
 }
 
-const BlogDetailsButton = ({Icon,children}:Iblofbtn) => {
+const BlogDetailsButton = ({Icon,children,hidden=""}:Iblofbtn) => {
+
     return (
-            <div className='border flex gap-1.5 cursor-pointer p-1 px-1.5'>
+            <div className='border flex items-center gap-1.5 cursor-pointer py-0.5 md:py-1 px-1 md:px-1.5'>
                 {Icon}
-                <p>{children}</p>
+                <p className={`${smoochSans.className} ${hidden}`}>{children}</p>
             </div>
     );
 };

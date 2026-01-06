@@ -1,6 +1,6 @@
 import { bbgBartle, smoochSans } from '@/app/FONTS/fonts';
 import Image from 'next/image';
-import React from 'react';
+
 
 const BlogContentAndImage = () => {
     return (

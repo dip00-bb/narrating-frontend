@@ -3,6 +3,7 @@
 import BlogContentAndImage from '@/app/COMPONENT/BLOGDETAILS/BlogContentAndImage';
 import BlogTopBar from '@/app/COMPONENT/BLOGDETAILS/BlogTopBar';
 import CommentInput from '@/app/COMPONENT/BLOGDETAILS/CommentInput';
+import Comments from '@/app/COMPONENT/BLOGDETAILS/Comments';
 import LikeAndShareAndAi from '@/app/COMPONENT/BLOGDETAILS/LikeAndShareAndAi';
 import React from 'react';
 
@@ -18,7 +19,7 @@ const page = () => {
                         </div>
 
                         <div>
-                            <BlogContentAndImage/>
+                            <BlogContentAndImage />
                         </div>
 
                         <div>
@@ -27,7 +28,9 @@ const page = () => {
                         <div>
                             <CommentInput />
                         </div>
-
+                        <div>
+                            <Comments />
+                        </div>
                     </div>
 
 

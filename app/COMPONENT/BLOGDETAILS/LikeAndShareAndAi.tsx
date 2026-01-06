@@ -1,4 +1,4 @@
-import { BookMarkedIcon, Bot, HeartMinus, HeartPlus, SquareArrowOutUpRight } from 'lucide-react';
+import { BookMarkedIcon, Bot, EyeIcon, HeartMinus, HeartPlus, SquareArrowOutUpRight } from 'lucide-react';
 import React from 'react';
 import BlogDetailsButton from './BlogButton';
 
@@ -14,7 +14,9 @@ const LikeAndShareAndAi = () => {
             <div>
                 <BlogDetailsButton Icon={<HeartMinus />}>10</BlogDetailsButton>
             </div>
-
+            <div>
+                <BlogDetailsButton Icon={<EyeIcon />}>12</BlogDetailsButton>
+            </div>
             <div>
                 <BlogDetailsButton hidden='hidden md:block' Icon={<SquareArrowOutUpRight />}>Share</BlogDetailsButton>
             </div>

@@ -5,6 +5,7 @@ import BlogTopBar from '@/app/COMPONENT/BLOGDETAILS/BlogTopBar';
 import CommentInput from '@/app/COMPONENT/BLOGDETAILS/CommentInput';
 import Comments from '@/app/COMPONENT/BLOGDETAILS/Comments';
 import LikeAndShareAndAi from '@/app/COMPONENT/BLOGDETAILS/LikeAndShareAndAi';
+import Sumarizer from '@/app/COMPONENT/BLOGSUMMARIZER/Sumarizer';
 import React from 'react';
 
 const page = () => {
@@ -30,6 +31,10 @@ const page = () => {
                         </div>
                         <div>
                             <Comments />
+                        </div>
+
+                        <div>
+                            <Sumarizer/>
                         </div>
                     </div>
 

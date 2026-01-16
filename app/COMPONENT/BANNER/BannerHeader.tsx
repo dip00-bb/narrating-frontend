@@ -5,6 +5,7 @@ import { bbgBartle, smoochSans } from '@/app/FONTS/fonts';
 import BTN from '../BTN/ButtonBtn';
 
 
+
 const BannerHeader = () => {
     return (
         <div className='space-y-4 md:space-y-10'>

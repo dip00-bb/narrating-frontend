@@ -5,6 +5,7 @@ import Image from 'next/image';
 import React from 'react';
 import BTN from '../BTN/ButtonBtn';
 
+
 const BlogCard = () => {
     return (
         <div className='border border-(--secondary-color)/70 grid grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 h-80'>

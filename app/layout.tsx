@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "./THEME/theme-provider";
-import Navbar from "./COMPONENT/LAYOUTS/Navbar";
 import ReduxWraper from "./WRAPER/ReduxWraper";
-
+import { ThemeProvider } from "./THEME/theme-provider";
 
 
 

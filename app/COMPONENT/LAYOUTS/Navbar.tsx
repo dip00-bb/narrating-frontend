@@ -42,10 +42,10 @@ const Navbar = () => {
                 {/* nav items */}
                 <div className={`flex justify-between flex-col md:col-span-4 md:flex-row items-center absolute  ${open ? ' transition-all delay-200 top-15 left-0 bg-(--secondary-color)/90 md:bg-transparent w-full':'-top-40'} md:static `}>
 
-                    <h1 className='cursor-pointer font-bold text-xl md:border-r-2 border-(--secondary-color) h-full items-center flex flex-1 px-1.5 md:text-(--accent-color) text-red-500'>HOME</h1>
-                    <h1 className='cursor-pointer font-bold text-xl md:border-r-2 border-(--secondary-color) h-full items-center flex flex-1 px-1.5 md:text-(--accent-color) text-red-500'>BLOGS</h1>
-                    <h1 className='cursor-pointer font-bold text-xl md:border-r-2 border-(--secondary-color) h-full items-center flex flex-1 px-1.5 md:text-(--accent-color) text-red-500'>LOGIN</h1>
-                    <h1 className='cursor-pointer font-bold text-xl md:h-full items-center flex flex-1 px-1.5 md:text-(--accent-color) text-red-500'>REGISTER</h1>
+                    <Link href={'/'} className='cursor-pointer font-bold text-xl md:border-r-2 border-(--secondary-color) h-full items-center flex flex-1 px-1.5 md:text-(--accent-color) text-red-500'>HOME</Link>
+                    <Link href={'/all-blogs'} className='cursor-pointer font-bold text-xl md:border-r-2 border-(--secondary-color) h-full items-center flex flex-1 px-1.5 md:text-(--accent-color) text-red-500'>BLOGS</Link>
+                    <Link href={'/login'} className='cursor-pointer font-bold text-xl md:border-r-2 border-(--secondary-color) h-full items-center flex flex-1 px-1.5 md:text-(--accent-color) text-red-500'>LOGIN</Link>
+                    <Link href={'/register'} className='cursor-pointer font-bold text-xl md:h-full items-center flex flex-1 px-1.5 md:text-(--accent-color) text-red-500'>REGISTER</Link>
 
 
                 </div>

@@ -1,7 +1,7 @@
+import AuthHeading from '@/app/COMPONENT/AUTH/AuthHeading';
+import ForgetPassword from '@/app/COMPONENT/AUTH/ForgetPassword';
+import LoginForm from '@/app/COMPONENT/AUTH/LoginForm';
 import React from 'react';
-import LoginForm from '../COMPONENT/AUTH/LoginForm';
-import ForgetPassword from '../COMPONENT/AUTH/ForgetPassword';
-import AuthHeading from '../COMPONENT/AUTH/AuthHeading';
 
 
 const page = () => {

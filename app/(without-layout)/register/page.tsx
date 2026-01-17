@@ -1,6 +1,6 @@
+import RegisterForm from '@/app/COMPONENT/AUTH/RegisterForm';
+import TextSide from '@/app/COMPONENT/AUTH/TextSide';
 import React from 'react';
-import RegisterForm from '../COMPONENT/AUTH/RegisterForm';
-import TextSide from '../COMPONENT/AUTH/TextSide';
 
 const RegisterPage = () => {
     return (

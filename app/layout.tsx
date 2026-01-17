@@ -24,7 +24,6 @@ export default function RootLayout({
       >
         <ReduxWraper>
           <ThemeProvider>
-            <Navbar />
             {children}
           </ThemeProvider>
         </ReduxWraper>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "./THEME/theme-provider";
 import Navbar from "./COMPONENT/LAYOUTS/Navbar";
+import ReduxWraper from "./WRAPER/ReduxWraper";
 
 
 
@@ -21,10 +22,12 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-        <ThemeProvider>
-          <Navbar/>
-          {children}
-        </ThemeProvider>
+        <ReduxWraper>
+          <ThemeProvider>
+            <Navbar />
+            {children}
+          </ThemeProvider>
+        </ReduxWraper>
       </body>
     </html>
   );

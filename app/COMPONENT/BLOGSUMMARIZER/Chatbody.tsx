@@ -1,83 +1,26 @@
-import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import React from 'react';
+import ChatBubble from './ChatBubble';
 
 const Chatbody = () => {
     return (
-        <div className='border px-4 py-2 max-h-60 overflow-scroll space-y-8'>
+        <div className='border px-4 py-2 max-h-100 overflow-scroll space-y-8'>
             <div className='w-full'>
-                <div className='flex items-center gap-2.5'>
-                    <div>
-                        <Avatar >
-                            <AvatarImage src={'/heroforeground.jpg'} />
-                        </Avatar>
-                    </div>
-                    <div>
-                        Hello , how are you?
-                    </div>
-                </div>
-
+                <ChatBubble />
             </div>
             <div className='flex justify-end'>
-                <div className='flex items-center gap-2.5'>
-                    <div>
-                        <Avatar >
-                            <AvatarImage src={'/heroforeground.jpg'} />
-                        </Avatar>
-                    </div>
-                    <div>
-                        Hello , how are you
-                    </div>
-                </div>
+                <ChatBubble flexDirection='flex-row-reverse' />
             </div>
             <div className='w-full'>
-                <div className='flex items-center gap-2.5'>
-                    <div>
-                        <Avatar >
-                            <AvatarImage src={'/heroforeground.jpg'} />
-                        </Avatar>
-                    </div>
-                    <div>
-                        Hello , how are you?
-                    </div>
-                </div>
-
+                <ChatBubble />
             </div>
             <div className='flex justify-end'>
-                <div className='flex items-center gap-2.5'>
-                    <div>
-                        <Avatar >
-                            <AvatarImage src={'/heroforeground.jpg'} />
-                        </Avatar>
-                    </div>
-                    <div>
-                        Hello , how are you
-                    </div>
-                </div>
+                <ChatBubble flexDirection='flex-row-reverse' />
             </div>
             <div className='w-full'>
-                <div className='flex items-center gap-2.5'>
-                    <div>
-                        <Avatar >
-                            <AvatarImage src={'/heroforeground.jpg'} />
-                        </Avatar>
-                    </div>
-                    <div>
-                        Hello , how are you?
-                    </div>
-                </div>
-
+                <ChatBubble />
             </div>
             <div className='flex justify-end'>
-                <div className='flex items-center gap-2.5'>
-                    <div>
-                        <Avatar >
-                            <AvatarImage src={'/heroforeground.jpg'} />
-                        </Avatar>
-                    </div>
-                    <div>
-                        Hello , how are you
-                    </div>
-                </div>
+                <ChatBubble flexDirection='flex-row-reverse' />
             </div>
         </div>
     );

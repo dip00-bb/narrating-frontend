@@ -2,7 +2,7 @@ import { BookMarkedIcon, Bot, EyeIcon, HeartMinus, HeartPlus, SquareArrowOutUpRi
 import React from 'react';
 import BlogDetailsButton from './BlogButton';
 import { useAppDispatch } from '@/lib/hooks/hook';
-import { toogleSaveBarOpen } from '@/lib/features/save-blog/saveBlog';
+import { toogleOpenSummarizer } from '@/lib/features/summarizer/saveBlog';
 
 
 const LikeAndShareAndAi = () => {
@@ -10,7 +10,7 @@ const LikeAndShareAndAi = () => {
     const dispatch = useAppDispatch()
 
     const handleShowUi = () => {
-        dispatch(toogleSaveBarOpen())
+        dispatch(toogleOpenSummarizer())
     }
 
     return (

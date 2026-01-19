@@ -11,15 +11,15 @@ const initialState:IinitialState={
 } 
 
 
-const saveBlogSlice=createSlice({
-    name:"saveBlog",
+const showSummarizer=createSlice({
+    name:"showSummarizer",
     initialState,
     reducers:{
-        toogleSaveBarOpen:(state)=>{
+        toogleOpenSummarizer:(state)=>{
             state.isOpen=!state.isOpen
         }
     }
 }) 
 
-export default saveBlogSlice.reducer
-export const {toogleSaveBarOpen}=saveBlogSlice.actions
+export default showSummarizer.reducer
+export const {toogleOpenSummarizer}=showSummarizer.actions

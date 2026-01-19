@@ -41,7 +41,7 @@ const BlogDetails = () => {
                             <Comments />
                         </div>
 
-                        <div className={`transition-all absolute  ${isOpen ?'top-[55%] lg:top-[95%] left-4 lg:left-[62%] z-30':'-top-100 left-4 lg:left-[62%] z-30'}`}>
+                        <div className={`transition-all absolute  ${isOpen ?'top-[55%] lg:top-[95%] left-4 lg:left-[62%] z-30':'-top-150 left-4 lg:left-[62%] z-30'}`}>
                             <Sumarizer />
                         </div>
                     </div>

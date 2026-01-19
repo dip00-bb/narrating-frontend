@@ -28,6 +28,7 @@ const Home = () => {
           </div>
 
           <div><BrowseByCategory /></div>
+               
         </div>
         {/* right side */}
         <div className='hidden md:col-span-1 md:block'></div>

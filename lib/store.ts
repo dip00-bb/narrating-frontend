@@ -1,8 +1,11 @@
 
 import { configureStore } from '@reduxjs/toolkit'
+import  saveToogleBarReducer  from './features/save-blog/saveBlog'
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    counter: saveToogleBarReducer,
+  },
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

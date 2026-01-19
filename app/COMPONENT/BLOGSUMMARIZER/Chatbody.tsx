@@ -3,7 +3,7 @@ import React from 'react';
 
 const Chatbody = () => {
     return (
-        <div className='border px-4 py-2'>
+        <div className='border px-4 py-2 max-h-60 overflow-scroll space-y-8'>
             <div className='w-full'>
                 <div className='flex items-center gap-2.5'>
                     <div>
@@ -29,7 +29,7 @@ const Chatbody = () => {
                     </div>
                 </div>
             </div>
-                        <div className='w-full'>
+            <div className='w-full'>
                 <div className='flex items-center gap-2.5'>
                     <div>
                         <Avatar >
@@ -54,7 +54,7 @@ const Chatbody = () => {
                     </div>
                 </div>
             </div>
-                        <div className='w-full'>
+            <div className='w-full'>
                 <div className='flex items-center gap-2.5'>
                     <div>
                         <Avatar >

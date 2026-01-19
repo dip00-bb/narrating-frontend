@@ -4,16 +4,18 @@ import Chatbody from './Chatbody';
 import ChatHeader from './ChatHeader';
 
 const Sumarizer = () => {
+
+
     return (
-        <div className='max-w-xl space-y-3.5 border px-4 py-2.5'>
+        <div className={`w-[95vw] md:w-[25rem] mx-auto space-y-3.5 border px-4 py-2.5 bg-background`}>
             <div>
-                <ChatHeader/>
+                <ChatHeader />
             </div>
             <div>
-                <Chatbody/>
+                <Chatbody />
             </div>
             <div>
-                <SumarizeInput/>
+                <SumarizeInput />
             </div>
         </div>
     );

@@ -3,7 +3,7 @@ import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { Calendar, Heart } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
-import BTN from '../BTN/ButtonBtn';
+import Link from 'next/link';
 
 
 const BlogCard = () => {
@@ -58,7 +58,7 @@ const BlogCard = () => {
                     </div>
 
                     <div>
-                        <BTN classes={`${smoochSans.className}`}>Read More</BTN>
+                        <Link href={'/all-blogs/55454'} className={`${smoochSans.className} border px-3 py-2 hover:bg-(--secondary-color) hover:border-(--secondary-color)`}>Read More</Link>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ import { smoochSans } from '@/app/FONTS/fonts';
 import BlogDetailsButton from './BlogButton';
 const BlogTopBar = () => {
     return (
-        <div className='flex  items-center justify-between mb-2 bg-amber-700 py-1 md:py-2 px-1'>
+        <div className='flex  items-center justify-between mb-2 py-1 md:py-2 px-1'>
             <div className='flex gap-2 items-center cursor-pointer'>
                 <Avatar>
                     <AvatarImage src={'/heroforeground.jpg'} />

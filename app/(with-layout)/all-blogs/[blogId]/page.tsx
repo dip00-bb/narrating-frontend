@@ -20,7 +20,7 @@ const BlogDetails = () => {
         <div>
             <div className="grid grid-cols-1 lg:grid-cols-6 px-2">
                 <div className='col-span-1'></div>
-                
+
                 <div className='col-span-4 grid grid-cols-1 lg:grid-cols-6 gap-5'>
                     <div className='lg:col-span-4 space-y-4 md:space-y-6'>
                         <div className='sticky top-0 z-50'>
@@ -34,21 +34,20 @@ const BlogDetails = () => {
                         <div className='relative'>
                             <LikeAndShareAndAi />
                         </div>
+                        <div className={`${isOpen ? 'block':'hidden'}`}>
+                            <Sumarizer />
+                        </div>
                         <div>
                             <CommentInput />
                         </div>
                         <div>
                             <Comments />
                         </div>
-
-                        <div className={`transition-all absolute  ${isOpen ?'top-[55%] lg:top-[95%] left-4 lg:left-[62%] z-30':'-top-150 left-4 lg:left-[62%] z-30'}`}>
-                            <Sumarizer />
-                        </div>
                     </div>
 
 
                     <div className='lg:col-span-2'>
-                        <RecentBlogCards />   
+                        <RecentBlogCards />
                     </div>
 
                 </div>

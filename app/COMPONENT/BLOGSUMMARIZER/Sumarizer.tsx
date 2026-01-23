@@ -7,7 +7,7 @@ const Sumarizer = () => {
 
 
     return (
-        <div className={`w-[95vw] h-135 md:w-100 mx-auto space-y-3.5 border px-4 py-2.5 bg-background`}>
+        <div className={`space-y-3.5 border px-4 py-2.5 bg-background`}>
             <div>
                 <ChatHeader />
             </div>

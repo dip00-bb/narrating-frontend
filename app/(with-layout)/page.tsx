@@ -6,6 +6,7 @@ import RecentBlogCards from "../COMPONENT/MAPPEDCARD/RecentBlogCards";
 
 const Home = () => {
   return (
+    
     <div>
       {/* grid layout */}
       <div className=' grid grid-cols-1 md:grid-cols-6 px-0.5'>

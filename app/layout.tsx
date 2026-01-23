@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ReduxWraper from "./WRAPER/ReduxWraper";
 import { ThemeProvider } from "./THEME/theme-provider";
+import ParticalBackground from "./COMPONENT/PARTICALBG/ParticalBackground";
 
 
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       >
         <ReduxWraper>
           <ThemeProvider>
+            <ParticalBackground/>
             {children}
           </ThemeProvider>
         </ReduxWraper>

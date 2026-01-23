@@ -1,16 +1,28 @@
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+"use client"
+import React, { useState } from 'react';
+import CommonInput from '../COMMONCOMPONENT/CommonInput';
 import { Send } from 'lucide-react';
-import React from 'react';
+
+
 
 const SumarizeInput = () => {
+
+    const [question,setQuestion]=useState("")
+
+    const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
+        e.preventDefault()
+        console.log(question)
+    }
+
+
+    const handleGetQuestion=(e:React.ChangeEvent<HTMLInputElement>)=>{
+        setQuestion(e.target.value)
+    }
+
     return (
-        <div className="flex w-full items-center gap-2">
-            <Input type="email" placeholder="Ask question about this blog" />
-            <Button type="submit" variant="outline" className='cursor-pointer'>
-                <Send/>
-            </Button>
-        </div>
+        <form onSubmit={handleSubmit}>
+            <CommonInput handlerFunction={handleGetQuestion} variant='outline' placeholder='Ask about this blog' type='text' sendButton={<Send/>}/>
+        </form>
     );
 };
 

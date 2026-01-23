@@ -7,6 +7,7 @@ import Comments from '@/app/COMPONENT/BLOGDETAILS/Comments';
 import LikeAndShareAndAi from '@/app/COMPONENT/BLOGDETAILS/LikeAndShareAndAi';
 import Sumarizer from '@/app/COMPONENT/BLOGSUMMARIZER/Sumarizer';
 import RecentBlogCards from '@/app/COMPONENT/MAPPEDCARD/RecentBlogCards';
+import SaveBlog from '@/app/COMPONENT/SAVEBLOG/SaveBlog';
 import { useAppSelector } from '@/lib/hooks/hook';
 import { RootState } from '@/lib/store';
 import React from 'react';
@@ -14,7 +15,8 @@ import React from 'react';
 
 const BlogDetails = () => {
 
-    const { isOpen } = useAppSelector((state: RootState) => state.counter)
+    const { isOpen } = useAppSelector((state: RootState) => state.summarizer)
+    const { isOpen: isSaveBlogOpen } = useAppSelector((state: RootState) => state.saveblog)
 
     return (
         <div>
@@ -30,11 +32,16 @@ const BlogDetails = () => {
                         <div>
                             <BlogContentAndImage />
                         </div>
+                        <div className={`${ isSaveBlogOpen ? 'flex justify-end' : 'hidden'}`}>
+                            <SaveBlog />
+                        </div>
 
                         <div className='relative'>
                             <LikeAndShareAndAi />
                         </div>
-                        <div className={`${isOpen ? 'block':'hidden'}`}>
+
+                        {/*  */}
+                        <div className={`${isOpen ? 'block' : 'hidden'}`}>
                             <Sumarizer />
                         </div>
                         <div>

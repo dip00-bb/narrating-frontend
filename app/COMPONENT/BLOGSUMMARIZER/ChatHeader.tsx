@@ -1,5 +1,5 @@
 import { bbgBartle } from '@/app/FONTS/fonts';
-import { toogleOpenSummarizer } from '@/lib/features/summarizer/saveBlog';
+import { toogleOpenSummarizer } from '@/lib/features/summarizer/summarizer';
 
 import { useAppDispatch } from '@/lib/hooks/hook';
 import { X } from 'lucide-react';

@@ -2,15 +2,19 @@ import { BookMarkedIcon, Bot, EyeIcon, HeartMinus, HeartPlus, SquareArrowOutUpRi
 import React from 'react';
 import BlogDetailsButton from './BlogButton';
 import { useAppDispatch } from '@/lib/hooks/hook';
-import { toogleOpenSummarizer } from '@/lib/features/summarizer/saveBlog';
+import { toogleOpenSummarizer } from '@/lib/features/summarizer/summarizer';
+import { toogleSaveBlog } from '@/lib/features/collection/collection';
 
 
 const LikeAndShareAndAi = () => {
 
     const dispatch = useAppDispatch()
 
-    const handleShowUi = () => {
+    const handleShowSummarizer = () => {
         dispatch(toogleOpenSummarizer())
+    }
+    const handleShowSaveBlog = () => {
+        dispatch(toogleSaveBlog())
     }
 
     return (
@@ -30,10 +34,10 @@ const LikeAndShareAndAi = () => {
                 <BlogDetailsButton hidden='hidden md:block' Icon={<SquareArrowOutUpRight />}>Share</BlogDetailsButton>
             </div>
             <div>
-                <BlogDetailsButton hidden='hidden md:block' Icon={<BookMarkedIcon />}>Save</BlogDetailsButton>
+                <BlogDetailsButton hidden='hidden md:block' handlerFunction={handleShowSaveBlog} Icon={<BookMarkedIcon />}>Save</BlogDetailsButton>
             </div>
             <div>
-                <BlogDetailsButton hidden='hidden md:block' Icon={<Bot />} handlerFunction={handleShowUi}>Summarize</BlogDetailsButton>
+                <BlogDetailsButton hidden='hidden md:block' Icon={<Bot />} handlerFunction={handleShowSummarizer}>Summarize</BlogDetailsButton>
             </div>
 
 

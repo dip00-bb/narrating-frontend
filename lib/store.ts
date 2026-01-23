@@ -1,10 +1,11 @@
 
 import { configureStore } from '@reduxjs/toolkit'
-import  toogleOpenSummarizer  from './features/summarizer/saveBlog'
-
+import  toogleOpenSummarizer  from './features/summarizer/summarizer'
+import toogleSaveBlog from './features/collection/collection'
 export const store = configureStore({
   reducer: {
-    counter: toogleOpenSummarizer,
+    summarizer: toogleOpenSummarizer,
+    saveblog:toogleSaveBlog
   },
 })
 

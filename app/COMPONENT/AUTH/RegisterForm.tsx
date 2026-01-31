@@ -2,16 +2,14 @@
 
 import { smoochSans } from '@/app/FONTS/fonts';
 import { Eye, EyeClosed, Lock, Mail, MoveUpRight, User } from 'lucide-react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AuthHeading from './AuthHeading';
 import InputFields from './InputFields';
 import PasswordField from './PasswordField';
+import { registerInfo, useHandleUserRegisterMutation } from '@/lib/features/authenticationSlices/public/publicApiSlice';
+import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 
-interface IUSERINTERFACE {
-    userName: string,
-    email: string,
-    password: string
-}
+
 
 const RegisterForm = () => {
 
@@ -19,24 +17,44 @@ const RegisterForm = () => {
     const [agree, setAgree] = useState(false);
 
 
-    const [registerData, setRegisterData] = useState<IUSERINTERFACE>({
-        userName: "",
+    const [registerData, setRegisterData] = useState<registerInfo>({
+        username: "",
         email: "",
         password: "",
 
     })
 
+
+    const [handleUserRegister, { isError, isLoading, isSuccess, error }] = useHandleUserRegisterMutation()
+
     const handleUserInfo = (e: React.ChangeEvent<HTMLInputElement>) => {
         setRegisterData({ ...registerData, [e.target.name]: e.target.value });
     }
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         if (!agree) {
             return
         }
         e.preventDefault()
+        const response = await handleUserRegister(registerData)
+        console.log(response)
         console.log(registerData)
     }
+
+    useEffect(() => {
+        if (isError ) {
+            alert(error?.data?.message);
+        }
+
+        if (isLoading) {
+            alert("loading")
+        }
+
+        if (isSuccess) {
+            alert("Successfull")
+        }
+    }, [isError, isLoading, isSuccess, error])
+
 
     return (
         <form onSubmit={handleSubmit}>
@@ -46,7 +64,7 @@ const RegisterForm = () => {
 
             <div className={`${smoochSans.className} space-y-4 px-2 p-2`}>
 
-                <InputFields placeholder='ENTER YOUR NAME' name='userName' seterFunction={handleUserInfo} Icon={<User />} type='text'>Username</InputFields>
+                <InputFields placeholder='ENTER YOUR NAME' name='username' seterFunction={handleUserInfo} Icon={<User />} type='text'>Username</InputFields>
 
 
                 <InputFields placeholder='ENTER YOUR EMAIL' name='email' seterFunction={handleUserInfo} Icon={<Mail />} type='email'>Email</InputFields>
@@ -88,6 +106,7 @@ const RegisterForm = () => {
                     </div>
 
                 </div>
+
                 <button disabled={!agree} className={`w-full py-3 ${agree ? 'bg-(--secondary-color)' : 'bg-(--secondary-color)/50'} cursor-pointer mt-4 font-bold `}>JOIN WITH US</button>
             </div>
 

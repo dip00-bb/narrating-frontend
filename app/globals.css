@@ -7,7 +7,7 @@
   /* Your default theme */
   --radius: 0.625rem;
   --background: #ffff;
-  --secondary-color: #456882;
+  --secondary-color: #1DB482;
   --accent-color: #080808;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -43,7 +43,7 @@
 
 [data-theme='dark'] {
   --background: #09111a;
-  --secondary-color: #456882;
+  --secondary-color: #1DB482;
   --accent-color: #F4F4F4;
 }
 

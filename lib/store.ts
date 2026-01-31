@@ -5,7 +5,8 @@ import toogleSaveBlog from './features/collection/collection'
 export const store = configureStore({
   reducer: {
     summarizer: toogleOpenSummarizer,
-    saveblog:toogleSaveBlog
+    saveblog:toogleSaveBlog,
+    
   },
 })
 

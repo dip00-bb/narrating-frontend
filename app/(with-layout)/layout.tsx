@@ -10,9 +10,14 @@ interface IBTN {
 const layout = (props: IBTN) => {
     return (
         <div>
-            <header><Navbar/></header>
-            {props.children}
-            <footer><Footer/></footer>
+            <header>
+                <Navbar />
+                
+            </header>
+            <main>
+                {props.children}
+            </main>
+            <footer><Footer /></footer>
         </div>
     )
 };

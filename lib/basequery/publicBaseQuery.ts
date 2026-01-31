@@ -1,5 +1,5 @@
 import { fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const baseQuery = fetchBaseQuery({
+export const publicBaseQuery = fetchBaseQuery({
     baseUrl: 'http://localhost:5000/api/',
 })

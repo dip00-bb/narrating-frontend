@@ -2,19 +2,11 @@
 import { publicBaseQuery } from "@/lib/basequery/publicBaseQuery";
 import { createApi } from "@reduxjs/toolkit/query/react";
 
-
-
-export const privateAuthApiSlice = createApi({
+export const publicAuthApiSlice = createApi({
+    reducerPath: 'public-auth',
     baseQuery: publicBaseQuery,
 
     endpoints: (build) => ({
-
-        handleUserLogOut: build.mutation({
-            query: () => ({
-                url: '/auth/logout',
-                method: 'POST',
-            })
-        }),
 
         handleResetPassword: build.mutation({
             query: () => ({
@@ -25,3 +17,7 @@ export const privateAuthApiSlice = createApi({
 
     })
 })
+
+export const {
+    useHandleResetPasswordMutation
+} = publicAuthApiSlice

@@ -4,6 +4,8 @@ import { createApi } from "@reduxjs/toolkit/query/react";
 
 
 export const privateAuthApiSlice = createApi({
+
+    reducerPath:'private-auth',
     baseQuery: baseQueryWithReAuth,
 
     endpoints: (build) => ({
@@ -15,12 +17,16 @@ export const privateAuthApiSlice = createApi({
             })
         }),
 
-        handleResetPassword: build.mutation({
+        handleUserChangePassword: build.mutation({
             query: () => ({
-                url: '/auth/change-password',
-                method: 'POST'
+                url: '/auth/change-password'
             })
         })
 
     })
 })
+
+
+export const {
+    useHandleUserLogOutMutation
+} = privateAuthApiSlice

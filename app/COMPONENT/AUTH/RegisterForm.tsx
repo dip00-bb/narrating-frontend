@@ -7,7 +7,7 @@ import AuthHeading from './AuthHeading';
 import InputFields from './InputFields';
 import PasswordField from './PasswordField';
 import { registerInfo, useHandleUserRegisterMutation } from '@/lib/features/authenticationSlices/public/publicApiSlice';
-import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+
 
 
 

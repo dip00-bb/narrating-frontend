@@ -14,7 +14,7 @@ const Home = () => {
         <div className='hidden md:col-span-1 md:block'></div>
 
         {/* 4 col main layout */}
-        <div className='col-span-4 md:border-x-2 md:border-b-2 border-(--secondary-color) p-3 space-y-5 md:space-y-10'>
+        <div className='col-span-4 p-3 space-y-5 md:space-y-10'>
           <div>
             <Banner />
           </div>

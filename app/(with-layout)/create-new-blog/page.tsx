@@ -1,4 +1,4 @@
-import EditorField from '@/app/COMPONENT/TEXTEDITOR/EditorField'
+import EditorField from '@/app/COMPONENT/TEXTEDITOR/Editor'
 import React from 'react'
 
 export default function CREATEBLOG() {

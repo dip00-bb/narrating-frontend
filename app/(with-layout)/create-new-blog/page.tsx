@@ -1,7 +1,10 @@
+import EditorField from '@/app/COMPONENT/TEXTEDITOR/EditorField'
 import React from 'react'
 
-export default function ADDBLOG() {
+export default function CREATEBLOG() {
   return (
-    <div>ADDBLOG</div>
+    <div>
+      <EditorField/>
+    </div>
   )
 }

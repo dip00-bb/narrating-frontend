@@ -1,6 +1,6 @@
 import { Toggle } from '@/components/ui/toggle'
 import { Editor, useEditorState } from '@tiptap/react'
-import { BoldIcon, Code, ItalicIcon, Redo, StrikethroughIcon, Underline, Undo } from 'lucide-react'
+import { BoldIcon, Code, ItalicIcon, List, ListOrdered, Redo, StrikethroughIcon, Underline, Undo } from 'lucide-react'
 
 
 
@@ -16,7 +16,8 @@ export default function EditorHeader({ editor }: { editor: Editor }) {
                 isCodeBlock: ctx.editor?.isActive("codeBlock") ?? false,
                 isUndo: ctx.editor?.isActive("undo"),
                 isRedo: ctx.editor?.isActive("redo"),
-                isOrderList: ctx.editor?.isActive("orderlist")
+                isOrderList: ctx.editor?.isActive("orderedList") ?? false,
+                isBulletList: ctx.editor?.isActive("bulletList") ?? false
             }
         }
     })
@@ -55,7 +56,7 @@ export default function EditorHeader({ editor }: { editor: Editor }) {
                 size="sm"
                 pressed={editorState.isStrike}
                 onPressedChange={() => editor.chain().focus().toggleStrike().run()}
-                aria-label="Toggle Link"
+                aria-label="Toggle Strike"
             >
                 <StrikethroughIcon className="h-4 w-4" />
             </Toggle>
@@ -64,7 +65,7 @@ export default function EditorHeader({ editor }: { editor: Editor }) {
                 size="sm"
                 pressed={editorState.isCodeBlock}
                 onPressedChange={() => editor.chain().focus().toggleCodeBlock().run()}
-                aria-label="Toggle Link"
+                aria-label="Toggle Code block"
             >
                 <Code className="h-4 w-4" />
             </Toggle>
@@ -73,7 +74,7 @@ export default function EditorHeader({ editor }: { editor: Editor }) {
                 size="sm"
                 pressed={editorState.isUndo}
                 onPressedChange={() => editor.chain().focus().undo().run()}
-                aria-label="Toggle Link"
+                aria-label="Toggle Undo"
             >
                 <Undo className="h-4 w-4" />
 
@@ -84,19 +85,39 @@ export default function EditorHeader({ editor }: { editor: Editor }) {
                 size="sm"
                 pressed={editorState.isRedo}
                 onPressedChange={() => editor.chain().focus().redo().run()}
-                aria-label="Toggle Link"
+                aria-label="Toggle Redo"
             >
                 <Redo className="h-4 w-4" />
             </Toggle>
 
+
+
             <Toggle
                 size="sm"
+                pressed={editorState.isOrderList}
+                onPressedChange={() => editor.chain().focus().toggleOrderedList().run()}
+                aria-label="Order List"
+            >
+                <ListOrdered className="h-4 w-4" />
+            </Toggle>
+
+            <Toggle
+                size="sm"
+                pressed={editorState.isBulletList}
+                onPressedChange={() => editor.chain().focus().toggleBulletList().run()}
+                aria-label="Bullet List"
+            >
+                <List className="h-4 w-4" />
+            </Toggle>
+
+            {/* <Toggle
+                size="sm"
                 pressed={editorState.isRedo}
-                onPressedChange={() => editor.chain().focus().redo().run()}
-                aria-label="Toggle Link"
+                onPressedChange={() => editor.chain().focus().toggle().run()}
+                aria-label="Order List"
             >
                 <Redo className="h-4 w-4" />
-            </Toggle>
+            </Toggle> */}
 
         </>
     )

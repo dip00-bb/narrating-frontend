@@ -1,6 +1,6 @@
 import { Toggle } from '@/components/ui/toggle'
 import { Editor, useEditorState } from '@tiptap/react'
-import { BoldIcon, Code, ItalicIcon, Link, Redo, StrikethroughIcon, Underline, Undo } from 'lucide-react'
+import { BoldIcon, Code, ItalicIcon, Redo, StrikethroughIcon, Underline, Undo } from 'lucide-react'
 
 
 

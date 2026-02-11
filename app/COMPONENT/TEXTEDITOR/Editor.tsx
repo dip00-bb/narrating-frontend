@@ -24,6 +24,11 @@ const extensions = [
                 class: 'list-disc pl-6',
             },
         },
+        codeBlock:{
+            HTMLAttributes:{
+                class:'bg-black text-white w-fit py-2 px-3'
+            },
+        }
     }),
     Image,
     FileHandler.configure({

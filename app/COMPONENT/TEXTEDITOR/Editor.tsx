@@ -23,14 +23,14 @@ lowlight.register('html', html)
 lowlight.register('css', css)
 lowlight.register('javascript', js)
 lowlight.register('typescript', ts)
-lowlight.register('python',python)
-lowlight.register('java',java)
-lowlight.register('c',c)
+lowlight.register('python', python)
+lowlight.register('java', java)
+lowlight.register('c', c)
 
 const extensions = [
 
     StarterKit.configure({
-        codeBlock:false,
+        codeBlock: false,
         orderedList: {
             HTMLAttributes: {
                 class: 'list-decimal pl-6 text-red-500',
@@ -88,11 +88,12 @@ const extensions = [
     }),
     CodeBlockLowlight.configure({
         lowlight,
-        HTMLAttributes:{
-            class:'bg-gray-800' 
+        HTMLAttributes: {
+            class: 'bg-gray-600 w-[800px] overflow-scroll px-4 py-3'
         },
         enableTabIndentation: true,
-    }),    
+        tabSize:5
+    }),
 ]
 
 export default function EditorField() {

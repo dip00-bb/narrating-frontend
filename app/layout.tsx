@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import 'highlight.js/styles/atom-one-dark.css'
+import 'highlight.js/styles/vs2015.css'
 import ReduxWraper from "./WRAPER/ReduxWraper";
 import { ThemeProvider } from "./THEME/theme-provider";
 import ParticalBackground from "./COMPONENT/PARTICALBG/ParticalBackground";

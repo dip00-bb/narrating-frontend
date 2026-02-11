@@ -2,18 +2,35 @@
 
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
+import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
 import FileHandler from '@tiptap/extension-file-handler'
 import Image from '@tiptap/extension-image'
-import Document from '@tiptap/extension-document'
-import Paragraph from '@tiptap/extension-paragraph'
-import Text from '@tiptap/extension-text'
 
-import React from 'react'
 import EditorHeader from './EditorHeader'
+
+import css from 'highlight.js/lib/languages/css'
+import js from 'highlight.js/lib/languages/javascript'
+import ts from 'highlight.js/lib/languages/typescript'
+import html from 'highlight.js/lib/languages/xml'
+import python from 'highlight.js/lib/languages/python'
+import java from 'highlight.js/lib/languages/java'
+import c from 'highlight.js/lib/languages/c'
+
+import { all, createLowlight } from 'lowlight'
+const lowlight = createLowlight(all)
+
+lowlight.register('html', html)
+lowlight.register('css', css)
+lowlight.register('javascript', js)
+lowlight.register('typescript', ts)
+lowlight.register('python',python)
+lowlight.register('java',java)
+lowlight.register('c',c)
 
 const extensions = [
 
     StarterKit.configure({
+        codeBlock:false,
         orderedList: {
             HTMLAttributes: {
                 class: 'list-decimal pl-6 text-red-500',
@@ -24,11 +41,6 @@ const extensions = [
                 class: 'list-disc pl-6',
             },
         },
-        codeBlock:{
-            HTMLAttributes:{
-                class:'bg-black text-white w-fit py-2 px-3'
-            },
-        }
     }),
     Image,
     FileHandler.configure({
@@ -74,12 +86,13 @@ const extensions = [
             })
         }
     }),
-
-    // Paragraph,
-    // Text,
-    // Document    
-
-
+    CodeBlockLowlight.configure({
+        lowlight,
+        HTMLAttributes:{
+            class:'bg-gray-800' 
+        },
+        enableTabIndentation: true,
+    }),    
 ]
 
 export default function EditorField() {

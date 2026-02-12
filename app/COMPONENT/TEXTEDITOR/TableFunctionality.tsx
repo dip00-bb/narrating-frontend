@@ -93,7 +93,7 @@ export default function TableFunctionality({ editor }: { editor: Editor }) {
                                         size="sm"
                                         pressed={obj.context}
                                         onPressedChange={obj.fn}
-                                        aria-label="Table"
+                                        aria-label={obj.title}
                                     >
                                         {obj.icon}
                                         {obj.title}

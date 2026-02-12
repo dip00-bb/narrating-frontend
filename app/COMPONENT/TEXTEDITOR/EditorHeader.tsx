@@ -1,6 +1,7 @@
 import { Toggle } from '@/components/ui/toggle'
 import { Editor, useEditorState } from '@tiptap/react'
 import { BoldIcon, Code, ItalicIcon, List, ListOrdered, Redo, StrikethroughIcon, Table, Underline, Undo } from 'lucide-react'
+import TableFunctionality from './TableFunctionality'
 
 export default function EditorHeader({ editor }: { editor: Editor }) {
 
@@ -16,12 +17,11 @@ export default function EditorHeader({ editor }: { editor: Editor }) {
                 isRedo: ctx.editor?.isActive("redo"),
                 isOrderList: ctx.editor?.isActive("orderedList") ?? false,
                 isBulletList: ctx.editor?.isActive("bulletList") ?? false,
-                isTable:ctx.editor?.isActive("table") ?? false
             }
         }
     })
     return (
-        <>
+        <div className='flex items-center'>
             <Toggle
                 size="sm"
                 pressed={editorState.isBold}
@@ -109,17 +109,8 @@ export default function EditorHeader({ editor }: { editor: Editor }) {
                 <List className="h-4 w-4" />
             </Toggle>
 
-            {/* Table */}
+            <TableFunctionality editor={editor} />
 
-            <Toggle
-                size="sm"
-                pressed={editorState.isTable}
-                onPressedChange= {() => editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow:false }).run()}
-                aria-label="Table"
-            >
-                <Table className="h-4 w-4" />
-            </Toggle>
-
-        </>
+        </div>
     )
 }

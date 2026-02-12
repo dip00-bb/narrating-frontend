@@ -1,3 +1,4 @@
+import { Table, TableCell, TableHeader, TableKit, TableRow } from '@tiptap/extension-table';
 
 import lowlight from "./supportedLanguage"
 import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight"
@@ -70,6 +71,43 @@ export const extensions = [
             class: 'bg-gray-600 w-[800px] overflow-scroll px-4 py-3'
         },
         enableTabIndentation: true,
-        tabSize:5
+        tabSize: 5
     }),
+    Table.configure({
+        resizable: true,
+        HTMLAttributes: {
+            class: 'w-full table-fixed border-collapse',
+        },
+    }),
+
+    TableRow.configure({
+        HTMLAttributes: {
+            class: 'border-b',
+        },
+    }),
+
+    TableHeader.configure({
+        HTMLAttributes: {
+            class:
+                'border border-gray-300 bg-gray-100 px-3 py-2 text-left font-semibold',
+        },
+    }),
+
+    TableCell.configure({
+        HTMLAttributes: {
+            class:
+                'border border-gray-300 px-3 py-2 align-top',
+        },
+    }),
+        // tableRow: {
+        //     HTMLAttributes: {
+        //         class: "border-2 border-green-500 w-[300px] h-[40px]"
+        //     }
+        // }
+        // tableHeader: {
+        //     HTMLAttributes: {
+        //         class: "border-2 border-black"
+        //     }
+        // }
+
 ]

@@ -1,8 +1,6 @@
 import { Toggle } from '@/components/ui/toggle'
 import { Editor, useEditorState } from '@tiptap/react'
-import { BoldIcon, Code, ItalicIcon, List, ListOrdered, Redo, StrikethroughIcon, Underline, Undo } from 'lucide-react'
-
-
+import { BoldIcon, Code, ItalicIcon, List, ListOrdered, Redo, StrikethroughIcon, Table, Underline, Undo } from 'lucide-react'
 
 export default function EditorHeader({ editor }: { editor: Editor }) {
 
@@ -17,7 +15,8 @@ export default function EditorHeader({ editor }: { editor: Editor }) {
                 isUndo: ctx.editor?.isActive("undo"),
                 isRedo: ctx.editor?.isActive("redo"),
                 isOrderList: ctx.editor?.isActive("orderedList") ?? false,
-                isBulletList: ctx.editor?.isActive("bulletList") ?? false
+                isBulletList: ctx.editor?.isActive("bulletList") ?? false,
+                isTable:ctx.editor?.isActive("table") ?? false
             }
         }
     })
@@ -110,14 +109,16 @@ export default function EditorHeader({ editor }: { editor: Editor }) {
                 <List className="h-4 w-4" />
             </Toggle>
 
-            {/* <Toggle
+            {/* Table */}
+
+            <Toggle
                 size="sm"
-                pressed={editorState.isRedo}
-                onPressedChange={() => editor.chain().focus().toggle().run()}
-                aria-label="Order List"
+                pressed={editorState.isTable}
+                onPressedChange= {() => editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow:false }).run()}
+                aria-label="Table"
             >
-                <Redo className="h-4 w-4" />
-            </Toggle> */}
+                <Table className="h-4 w-4" />
+            </Toggle>
 
         </>
     )

@@ -5,6 +5,18 @@ import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight"
 import FileHandler from "@tiptap/extension-file-handler"
 import StarterKit from "@tiptap/starter-kit"
 import Image from '@tiptap/extension-image'
+import { uploadToCloudinary } from './uploadImageCloudinary';
+
+const CustomImage = Image.extend({
+    addAttributes() {
+        return {
+            ...this.parent?.(),
+            public_id: {
+                default: null,
+            },
+        };
+    },
+});
 
 export const extensions = [
 
@@ -21,49 +33,66 @@ export const extensions = [
             },
         },
     }),
-    Image,
+    CustomImage.configure({
+        inline: false,
+    }),
     FileHandler.configure({
         allowedMimeTypes: ['image/png', 'image/jpeg', 'image/gif', 'image/webp'],
-        onPaste: (currentEditor, files, htmlContent) => {
-            files.forEach(file => {
-                if (htmlContent) {
-                    return false
-                }
-                const fileReader = new FileReader()
-                fileReader.readAsDataURL(file)
-                fileReader.onload = () => {
-                    currentEditor
-                        .chain()
-                        .insertContentAt(currentEditor.state.selection.anchor, {
-                            type: 'image',
-                            attrs: {
-                                src: fileReader.result,
-                            },
-                        })
-                        .focus()
-                        .run()
-                }
-            })
-        },
-        onDrop: (currentEditor, files, pos) => {
-            files.forEach(file => {
-                const fileReader = new FileReader()
 
-                fileReader.readAsDataURL(file)
-                fileReader.onload = () => {
-                    currentEditor
+        onPaste: async (editor, files,) => {
+            console.log("Files", files)
+            if (files && files.length > 0) {
+                for (const file of files) {
+                    try {
+                        const response = await uploadToCloudinary(file);
+                        editor
+                            .chain()
+                            .insertContent({
+                                type: "image",
+                                attrs: {
+                                    src: response.secure_url,
+                                    public_id: response.public_id
+                                },
+                            })
+                            .focus()
+                            .run();
+
+                        console.log(response.public_id)
+                    } catch (err) {
+                        console.error(err);
+                    }
+                }
+                return true;
+            }
+
+        },
+
+        onDrop: async (editor, files, pos) => {
+            for (const file of files) {
+                try {
+
+                    const response = await uploadToCloudinary(file);
+
+                    editor
                         .chain()
                         .insertContentAt(pos, {
-                            type: 'image',
+                            type: "image",
                             attrs: {
-                                src: fileReader.result,
+                                src: response.secure_url,
+                                public_id: response.public_id,
                             },
                         })
                         .focus()
-                        .run()
+                        .run();
+
+                } catch (err) {
+                    console.error("Upload failed:", err);
                 }
-            })
+            }
+
+            return true;
         }
+
     }),
     CodeBlockLowlight.configure({
         lowlight,
@@ -99,15 +128,5 @@ export const extensions = [
                 'border border-gray-300 px-3 py-2 align-top',
         },
     }),
-        // tableRow: {
-        //     HTMLAttributes: {
-        //         class: "border-2 border-green-500 w-[300px] h-[40px]"
-        //     }
-        // }
-        // tableHeader: {
-        //     HTMLAttributes: {
-        //         class: "border-2 border-black"
-        //     }
-        // }
 
 ]

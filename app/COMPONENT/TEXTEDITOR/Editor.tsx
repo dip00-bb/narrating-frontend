@@ -3,6 +3,7 @@
 import { EditorContent, useEditor } from '@tiptap/react'
 import EditorHeader from './EditorHeader'
 import { extensions } from './extensions'
+import PostTitle from './PostTitle'
 
 
 
@@ -27,9 +28,11 @@ export default function EditorField() {
             
             <div className="w-full max-w-7xl mx-auto">
                 <div className="overflow-x-auto">
+                    <PostTitle/>
                     <EditorHeader editor={editor} />
                     <EditorContent editor={editor} />
                 </div>
+                <button onClick={()=>console.log(editor.getJSON())}>Post</button>
             </div>
 
         </>

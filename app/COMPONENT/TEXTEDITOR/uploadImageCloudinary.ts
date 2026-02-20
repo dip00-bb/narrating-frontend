@@ -1,9 +1,7 @@
 import axios from "axios";
 
 export async function uploadToCloudinary(file: File) {
-    // 1️⃣ Get signature from backend
 
-    console.log(file)
     const response = await axios.post(
         "http://localhost:5000/api/cloudinary/signature"
     );
@@ -17,7 +15,6 @@ export async function uploadToCloudinary(file: File) {
     formData.append("signature", signData.data.signature);
     formData.append("folder", signData.data.folder);
 
-    // 2️⃣ Upload to Cloudinary
     const { data: uploadData } = await axios.post(
         `https://api.cloudinary.com/v1_1/${signData.data.cloudName}/image/upload`,
         formData
@@ -25,5 +22,5 @@ export async function uploadToCloudinary(file: File) {
 
     console.log(formData)
 
-    return uploadData; // contains secure_url, public_id
+    return uploadData; 
 }
